@@ -1,0 +1,151 @@
+================================================================================
+           INSTALL NODE.JS RIGHT NOW - SIMPLE STEPS
+================================================================================
+
+I just opened Node.js website in your browser!
+
+================================================================================
+WHAT YOU'LL SEE ON THE NODE.JS WEBSITE:
+================================================================================
+
+You'll see TWO big download buttons:
+
+┌─────────────────────────────────────────────────────────────────┐
+│  Node.js                                                       │
+│                                                                 │
+│  [ LTS ]  <-- CLICK THIS ONE!                                  │
+│  Recommended For Most Users                                    │
+│  v20.x.x                                                       │
+│                                                                 │
+│  [ Current ]                                                   │
+│  Latest Features                                               │
+│  v21.x.x                                                       │
+└─────────────────────────────────────────────────────────────────┘
+
+================================================================================
+STEP-BY-STEP INSTRUCTIONS:
+================================================================================
+
+STEP 1: Download
+───────────────
+☑ Click the BIG GREEN "LTS" button
+☑ Wait for download to complete (takes about 30 seconds)
+☑ You'll see a file named: node-v20.x.x-x64.msi
+
+STEP 2: Install
+───────────────
+☑ Open your Downloads folder
+☑ Double-click the .msi file you just downloaded
+☑ Click "Next" on the first screen
+☑ Click "I accept the agreement" then "Next"
+☑ Click "Next" (keep default location)
+☑ Click "Next" (keep default components)
+☑ ✅ CHECK "Automatically install the necessary tools"
+☑ Click "Install"
+☑ Wait 1-2 minutes for installation
+☑ Click "Finish" when done
+
+STEP 3: Restart
+───────────────
+⚠️  THIS IS CRITICAL: RESTART YOUR COMPUTER NOW!
+
+☑ Click Start button
+☑ Click Power button
+☑ Click Restart
+☑ Wait for computer to restart
+
+STEP 4: Verify
+───────────────
+☑ Open PowerShell (search for "PowerShell" in Start menu)
+☑ Type: node --version
+☑ Press Enter
+☑ You should see: v20.x.x
+☑ Type: npm --version
+☑ Press Enter
+☑ You should see: 10.x.x
+
+✅ If you see both version numbers, SUCCESS!
+
+================================================================================
+AFTER NODE.JS IS INSTALLED:
+================================================================================
+
+Come back to this folder and run:
+
+   powershell -ExecutionPolicy Bypass -File setup-helper.ps1
+
+This will:
+1. Check Node.js installation ✓
+2. Install project dependencies
+3. Help you configure ClickUp credentials
+4. Start the dashboard!
+
+================================================================================
+IMPORTANT NOTES:
+================================================================================
+
+✅ You MUST restart your computer after installing Node.js
+✅ Don't skip the restart step
+✅ If you get errors, make sure you restarted
+✅ Close and reopen PowerShell after restart
+
+================================================================================
+TROUBLESHOOTING:
+================================================================================
+
+Problem: "Can't find the download button"
+Solution: Look for big green button that says "LTS"
+
+Problem: "Download won't start"
+Solution: Try this direct link: https://nodejs.org/dist/v20.11.0/node-v20.11.0-x64.msi
+
+Problem: "Installer won't run"
+Solution: Right-click the file → Run as administrator
+
+Problem: "Still says node not recognized"
+Solution: Did you RESTART? Try closing and reopening PowerShell
+
+Problem: "Website is in a different language"
+Solution: Scroll to the bottom, look for English (EN) link
+
+================================================================================
+HOW LONG WILL THIS TAKE?
+================================================================================
+
+Download:  30 seconds - 2 minutes
+Install:   1-2 minutes
+Restart:   2-5 minutes (depending on your computer)
+Total:     About 5-10 minutes
+
+Then you're ready to run the ClickUp Dashboard!
+
+================================================================================
+NEED MORE HELP?
+================================================================================
+
+Check these files:
+  - DOWNLOAD_NODEJS.md - Detailed instructions
+  - GET_STARTED_NOW.md - Full setup guide
+  - SETUP_INSTRUCTIONS.txt - Complete walkthrough
+
+================================================================================
+QUICK REFERENCE:
+================================================================================
+
+Download Node.js:     https://nodejs.org/
+Choose:               LTS (green button)
+File you'll get:      node-v20.x.x-x64.msi
+Installation time:    1-2 minutes
+Must do after:        RESTART computer
+Verify command:       node --version
+
+================================================================================
+READY? GO TO THE BROWSER THAT JUST OPENED!
+================================================================================
+
+If the browser didn't open, go to: https://nodejs.org/
+
+See you back here after the restart! 🚀
+
+================================================================================
+

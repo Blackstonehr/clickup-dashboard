@@ -1,0 +1,204 @@
+================================================================================
+CLICKUP HR DASHBOARD - SETUP INSTRUCTIONS
+================================================================================
+
+CRITICAL: Node.js is NOT installed on this system. Follow these steps:
+
+================================================================================
+PART 1: INSTALL NODE.JS
+================================================================================
+
+STEP 1: Download Node.js
+-------------------------
+1. Go to: https://nodejs.org/
+2. Download the LTS version (v20.x or v18.x)
+3. Run the downloaded installer (.msi file)
+4. Follow the installation wizard (click "Next" through all steps)
+5. RESTART your computer when installation completes
+
+STEP 2: Verify Node.js Installation
+------------------------------------
+1. Open PowerShell or Command Prompt
+2. Run these commands:
+   node --version    (should show v18.x.x or v20.x.x)
+   npm --version     (should show 9.x.x or 10.x.x)
+
+If you get errors, go back to STEP 1 and restart your computer after installing.
+
+================================================================================
+PART 2: INSTALL PROJECT DEPENDENCIES
+================================================================================
+
+STEP 3: Navigate to Project Folder
+-----------------------------------
+Open PowerShell in this folder:
+"D:\Blackstone Contractor Solutions\OneDrive - Blackstone Contractor Solutions\Documents\clickup-dashboard"
+
+STEP 4: Install Dependencies
+-----------------------------
+Run this command:
+   npm install
+
+Wait for it to finish (will take 2-5 minutes). You should see:
+   "added XXX packages in XXs"
+
+If you get errors, run these commands in order:
+   npm cache clean --force
+   npm install
+
+================================================================================
+PART 3: GET CLICKUP CREDENTIALS
+================================================================================
+
+STEP 5: Get API Token
+---------------------
+1. Go to: https://app.clickup.com/
+2. Sign in to your ClickUp account
+3. Click your avatar (profile picture) in bottom-left corner
+4. Click "Settings"
+5. Click "Apps" in the left sidebar
+6. Find "API Token" section
+7. Click "Generate" (or "Regenerate")
+8. IMMEDIATELY copy the token (it starts with "pk_")
+   WARNING: You can't see it again after closing this window!
+
+STEP 6: Get Team ID
+-------------------
+Method 1 (Easiest):
+1. Go to your ClickUp workspace
+2. Look at the URL in your browser
+3. It will be: https://app.clickup.com/12345678/
+4. Copy just the number: 12345678 (this is your Team ID)
+
+Method 2 (API):
+1. After you have your API token, open PowerShell
+2. Run this command (replace YOUR_TOKEN with your actual token):
+   curl -H "Authorization: pk_YOUR_TOKEN" https://api.clickup.com/api/v2/team
+3. Look for "id" in the response
+
+================================================================================
+PART 4: CONFIGURE ENVIRONMENT
+================================================================================
+
+STEP 7: Create Environment File
+--------------------------------
+1. In PowerShell, run:
+   copy .env.local.example .env.local
+
+2. Open .env.local in Notepad or any text editor
+
+3. Edit the file to look like this:
+   CLICKUP_API_TOKEN=pk_YOUR_ACTUAL_TOKEN_HERE
+   CLICKUP_TEAM_ID=YOUR_ACTUAL_TEAM_ID_HERE
+
+4. Save the file
+
+IMPORTANT: 
+- Replace YOUR_ACTUAL_TOKEN_HERE with the token from STEP 5
+- Replace YOUR_ACTUAL_TEAM_ID_HERE with the ID from STEP 6
+- No spaces around the = sign
+- The token should start with "pk_"
+
+================================================================================
+PART 5: RUN THE APPLICATION
+================================================================================
+
+STEP 8: Start Development Server
+---------------------------------
+Run this command:
+   npm run dev
+
+Wait for it to say:
+   "✓ Ready in X ms"
+   "○ Local: http://localhost:3000"
+
+STEP 9: Open in Browser
+-----------------------
+1. Open your web browser
+2. Go to: http://localhost:3000
+3. You should see the ClickUp HR Dashboard!
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+ERROR: "node is not recognized"
+SOLUTION: Node.js not installed or PATH not updated
+          - Go back to PART 1
+          - Reinstall Node.js
+          - RESTART your computer
+
+ERROR: "npm is not recognized"  
+SOLUTION: Same as above - reinstall Node.js and restart
+
+ERROR: "Port 3000 is already in use"
+SOLUTION: Run this instead:
+          npm run dev -- -p 3001
+
+ERROR: "Invalid API Token"
+SOLUTION: - Check token starts with "pk_"
+          - No extra spaces
+          - Copy-paste, don't retype
+          - Regenerate token in ClickUp
+
+ERROR: "Team not found"
+SOLUTION: - Check Team ID is correct number
+          - Make sure you have access to that workspace
+
+ERROR: "Cannot find module"
+SOLUTION: Run these commands:
+          npm cache clean --force
+          rm -r node_modules
+          npm install
+
+ERROR: Installation hangs or fails
+SOLUTION: - Check internet connection
+          - Close antivirus temporarily
+          - Run PowerShell as Administrator
+          - Try again with: npm install --verbose
+
+================================================================================
+NEXT STEPS AFTER SETUP
+================================================================================
+
+Once running, you can:
+- View Dashboard: http://localhost:3000/dashboard
+- View Employees: http://localhost:3000/employees
+- View Tasks: http://localhost:3000/tasks
+- View Analytics: http://localhost:3000/analytics
+- View Settings: http://localhost:3000/settings
+
+================================================================================
+NEED MORE HELP?
+================================================================================
+
+Check these files:
+- QUICK_START.md - Quick reference guide
+- DEPENDENCY_SETUP.md - Detailed dependency help
+- docs/SETUP.md - Full setup documentation
+- PROJECT_SUMMARY.md - Overview of the project
+
+ClickUp Resources:
+- API Token: https://app.clickup.com/settings/apps
+- API Docs: https://developer.clickup.com/docs/authentication
+
+================================================================================
+SUMMARY CHECKLIST
+================================================================================
+
+Before you start development server, make sure:
+[ ] Node.js installed (v18+)
+[ ] npm working
+[ ] Ran "npm install" successfully
+[ ] Created .env.local file
+[ ] Added ClickUp API token
+[ ] Added ClickUp Team ID
+[ ] Saved .env.local file
+[ ] No errors in PowerShell
+
+If all checked, run: npm run dev
+
+================================================================================
+END OF INSTRUCTIONS
+================================================================================
+
