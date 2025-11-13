@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClickUp Dashboard - Custom HTML Blocks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-6">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">ClickUp Dashboard - Custom HTML Blocks</h1>
+        
+        <!-- Quick Stats Block -->
+        <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-md p-6 text-white mb-6">
+            <h3 class="text-xl font-bold mb-6">Today's Overview</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="text-3xl font-bold">156</div>
+                    <div class="text-sm opacity-90">Total Tasks</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-300">23</div>
+                    <div class="text-sm opacity-90">Completed Today</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-red-300">7</div>
+                    <div class="text-sm opacity-90">Overdue</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-yellow-300">12</div>
+                    <div class="text-sm opacity-90">Due Soon</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Task Progress Block -->
+        <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-blue-500 mb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-lg font-semibold text-gray-800">Sprint Progress</h3>
+                <span class="text-2xl font-bold text-blue-600">72%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-3 mb-2">
+                <div class="bg-blue-500 h-3 rounded-full transition-all duration-300" style="width: 72%"></div>
+            </div>
+            <p class="text-sm text-gray-600">18 of 25 tasks completed</p>
+        </div>
+
+        <!-- Priority Tasks Alert Block -->
+        <div class="bg-red-50 border border-red-200 rounded-lg p-6 mb-6">
+            <div class="flex items-center mb-4">
+                <div class="w-3 h-3 bg-red-500 rounded-full mr-3 animate-pulse"></div>
+                <h3 class="text-lg font-semibold text-red-800">Priority Tasks</h3>
+            </div>
+            <div class="space-y-3">
+                <div class="flex justify-between items-center">
+                    <span class="text-red-700">Urgent Tasks</span>
+                    <span class="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold">5</span>
+                </div>
+                <div class="flex justify-between items-center">
+                    <span class="text-orange-700">High Priority</span>
+                    <span class="bg-orange-500 text-white px-3 py-1 rounded-full text-sm font-bold">12</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Performance Metrics Block -->
+        <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-lg shadow-md p-6 mb-6">
+            <h3 class="text-xl font-bold text-gray-800 mb-4">HR Development Team Performance</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-purple-600">47</div>
+                    <div class="text-sm text-gray-600">Tasks Completed</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600">2.3d</div>
+                    <div class="text-sm text-gray-600">Avg Completion</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600">8</div>
+                    <div class="text-sm text-gray-600">Active Projects</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-orange-600">87%</div>
+                    <div class="text-sm text-gray-600">Efficiency</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Employee Status Block -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Team Status</h3>
+            <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-green-500 rounded-full mr-3"></div>
+                        <span class="text-gray-700">Online</span>
+                    </div>
+                    <span class="font-semibold text-green-600">12</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full mr-3"></div>
+                        <span class="text-gray-700">Busy</span>
+                    </div>
+                    <span class="font-semibold text-yellow-600">5</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-orange-500 rounded-full mr-3"></div>
+                        <span class="text-gray-700">Away</span>
+                    </div>
+                    <span class="font-semibold text-orange-600">3</span>
+                </div>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="w-3 h-3 bg-gray-500 rounded-full mr-3"></div>
+                        <span class="text-gray-700">Offline</span>
+                    </div>
+                    <span class="font-semibold text-gray-600">2</span>
+                </div>
+            </div>
+            <div class="mt-4 pt-4 border-t border-gray-200">
+                <div class="text-center text-sm text-gray-600">
+                    Total Team Members: <span class="font-semibold">22</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Timeline Block -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Project Timeline</h3>
+            <div class="space-y-4">
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-medium text-gray-800">HR System Upgrade</h4>
+                        <span class="px-2 py-1 rounded-full text-xs font-medium text-green-600 bg-green-100">on track</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-2">Due: Dec 15, 2024</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                    <div class="text-xs text-gray-500 mt-1">75% complete</div>
+                </div>
+                
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-medium text-gray-800">Employee Onboarding Portal</h4>
+                        <span class="px-2 py-1 rounded-full text-xs font-medium text-yellow-600 bg-yellow-100">at risk</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-2">Due: Nov 30, 2024</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 45%"></div>
+                    </div>
+                    <div class="text-xs text-gray-500 mt-1">45% complete</div>
+                </div>
+                
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-medium text-gray-800">Performance Review System</h4>
+                        <span class="px-2 py-1 rounded-full text-xs font-medium text-red-600 bg-red-100">delayed</span>
+                    </div>
+                    <div class="text-sm text-gray-600 mb-2">Due: Nov 20, 2024</div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 20%"></div>
+                    </div>
+                    <div class="text-xs text-gray-500 mt-1">20% complete</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Activity Feed Block -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-lg font-semibold text-gray-800 mb-4">Recent Activity</h3>
+            <div class="space-y-3 max-h-64 overflow-y-auto">
+                <div class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded">
+                    <div class="text-lg">✓</div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm text-gray-800">
+                            <span class="font-medium">Sarah Johnson</span> completed task 
+                            <span class="font-medium">Employee Database Update</span>
+                        </p>
+                        <p class="text-xs text-gray-500">2 minutes ago</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded">
+                    <div class="text-lg">💬</div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm text-gray-800">
+                            <span class="font-medium">Mike Chen</span> commented on 
+                            <span class="font-medium">Q4 Planning Meeting</span>
+                        </p>
+                        <p class="text-xs text-gray-500">15 minutes ago</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded">
+                    <div class="text-lg">👤</div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm text-gray-800">
+                            <span class="font-medium">Lisa Rodriguez</span> was assigned to 
+                            <span class="font-medium">Benefits Review Project</span>
+                        </p>
+                        <p class="text-xs text-gray-500">1 hour ago</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start space-x-3 p-2 hover:bg-gray-50 rounded">
+                    <div class="text-lg">📁</div>
+                    <div class="flex-1 min-w-0">
+                        <p class="text-sm text-gray-800">
+                            <span class="font-medium">David Kim</span> created project 
+                            <span class="font-medium">Holiday Schedule Planning</span>
+                        </p>
+                        <p class="text-xs text-gray-500">2 hours ago</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate progress bars on load
+            const progressBars = document.querySelectorAll('[style*="width:"]');
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 500);
+            });
+
+            // Add click handlers for activity items
+            const activityItems = document.querySelectorAll('.hover\\:bg-gray-50');
+            activityItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('bg-blue-50');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
